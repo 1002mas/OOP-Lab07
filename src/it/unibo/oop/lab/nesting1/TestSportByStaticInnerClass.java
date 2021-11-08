@@ -21,7 +21,7 @@ public final class TestSportByStaticInnerClass {
      */
     public static void main(final String... args) {
         /*
-         * TODO: create 3 sport social network users (SportSocialNetworkUser):
+         *create 3 sport social network users (SportSocialNetworkUser):
          * 
          * Davide Cassani , dcassani, 53
          * 

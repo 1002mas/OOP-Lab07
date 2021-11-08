@@ -3,6 +3,9 @@
  */
 package it.unibo.oop.lab.enum1;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import it.unibo.oop.lab.socialnetwork.SocialNetworkUserImpl;
 import it.unibo.oop.lab.socialnetwork.User;
 
@@ -20,47 +23,35 @@ import it.unibo.oop.lab.socialnetwork.User;
  * Sport.java)
  * 
  * 
- * @param <U>
- *            specific user type
+ * @param <U> specific user type
  */
 public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUserImpl<U> {
 
-    /*
-     * TODO
-     * 
-     * add a field to keep track of the set of sports followed/done by a user
-     */
+    private Set<Sport> sports = new HashSet<>();
 
     /**
      * Builds a new {@link SportSocialNetworkUserImpl}.
      * 
-     * @param name
-     *            the user firstname
-     * @param surname
-     *            the user lastname
-     * @param user
-     *            alias of the user, i.e. the way a user is identified on an
-     *            application
+     * @param name    the user firstname
+     * @param surname the user lastname
+     * @param user    alias of the user, i.e. the way a user is identified on an
+     *                application
      */
     public SportSocialNetworkUserImpl(final String name, final String surname, final String user) {
-        this(name, surname, user, -1);
+	this(name, surname, user, -1);
     }
 
     /**
      * Builds a new {@link SportSocialNetworkUserImpl}.
      * 
-     * @param name
-     *            the user firstname
-     * @param surname
-     *            the user lastname
-     * @param userAge
-     *            user's age
-     * @param user
-     *            alias of the user, i.e. the way a user is identified on an
-     *            application
+     * @param name    the user firstname
+     * @param surname the user lastname
+     * @param userAge user's age
+     * @param user    alias of the user, i.e. the way a user is identified on an
+     *                application
      */
     public SportSocialNetworkUserImpl(final String name, final String surname, final String user, final int userAge) {
-        super(name, surname, user, userAge);
+	super(name, surname, user, userAge);
     }
 
     /*
@@ -70,26 +61,24 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
      */
 
     /**
-     * Add a new sport followed by this user: if the user already likes or does
-     * the sport, nothing happens.
+     * Add a new sport followed by this user: if the user already likes or does the
+     * sport, nothing happens.
      * 
-     * @param sport
-     *            a sport followed/done by the user
+     * @param sport a sport followed/done by the user
      */
     // TODO
     public void addSport(final Sport sport) {
-
+	sports.add(sport);
     }
 
     /**
      * Returns true if a user likes/does a given sport.
      * 
-     * @param s
-     *            sport to use as an input
+     * @param s sport to use as an input
      * 
      * @return true if the user likes sport s
      */
     public boolean hasSport(final Sport s) {
-        return false;
+	return sports.contains(s);
     }
 }
