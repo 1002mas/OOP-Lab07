@@ -129,8 +129,7 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
 	final private String name;
 
 	public Sport(String name) {
-	    super();
-	    this.name = name;
+	    this.name = Objects.requireNonNull(name, "Sport name can't be null");
 	}
 
 	@Override
